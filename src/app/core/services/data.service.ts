@@ -4,9 +4,7 @@ import { Reader } from 'app/models/reader';
 import { Book } from 'app/models/book';
 import { allBooks, allReaders } from 'app/data';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class DataService {
   mostPopularBook: Book = allBooks[0];
 

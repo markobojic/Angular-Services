@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { allReaders } from 'app/data';
-import { DataService } from './../services/data.service';
+import { DataService } from '../core/services/data.service';
 import { Reader } from 'app/models/reader';
 
 @Component({

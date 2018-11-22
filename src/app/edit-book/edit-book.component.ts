@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { Book } from 'app/models/book';
 import { allBooks } from 'app/data';
-import { DataService } from './../services/data.service';
+import { DataService } from '../core/services/data.service';
 
 @Component({
   selector: 'app-edit-book',

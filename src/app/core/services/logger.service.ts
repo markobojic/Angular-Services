@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class LoggerService {
   logger(msg: string) {
     const time = new Date().toLocaleDateString();
