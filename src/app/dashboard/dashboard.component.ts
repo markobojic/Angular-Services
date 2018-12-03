@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Version, VERSION } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 import { Observable } from 'rxjs';
 
 import { Book } from 'app/models/book';
@@ -20,7 +21,8 @@ export class DashboardComponent implements OnInit {
   mostPopularBook: Book;
 
   constructor(private loggerService: LoggerService,
-              private dataService: DataService) { }
+              private dataService: DataService,
+              private title: Title) { }
 
   ngOnInit() {
     this.loggerService.logger('Welcome to the book tracker');
@@ -35,6 +37,8 @@ export class DashboardComponent implements OnInit {
 
     this.getAuthorRecommendation(1)
         .catch(err => this.loggerService.error(err));
+
+    this.title.setTitle(`Book Tracker ${VERSION.full}`);
   }
 
   private async getAuthorRecommendation(readerID: number): Promise<void> {

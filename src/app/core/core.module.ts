@@ -1,8 +1,9 @@
-import { NgModule, Optional, SkipSelf } from '@angular/core';
+import { NgModule, Optional, SkipSelf, ErrorHandler } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DataService } from './services/data.service';
 import { LoggerService } from './services/logger.service';
 import { throwIfAlreadyLoaded } from './module-import-guard';
+import { BookTrackerErrorHandlerService } from './services/book-tracker-error-handler.service';
 
 @NgModule({
   imports: [
@@ -11,7 +12,8 @@ import { throwIfAlreadyLoaded } from './module-import-guard';
   declarations: [],
   providers: [
     DataService,
-    LoggerService
+    LoggerService,
+    { provide: ErrorHandler, useClass: BookTrackerErrorHandlerService }
   ]
 })
 export class CoreModule {
